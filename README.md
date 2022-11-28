@@ -114,7 +114,6 @@ services:
       - 443:443
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf
-      - ./nginx/dhparam.pem:/etc/ssl/certs/dhparam.pem
       - ./certbot/conf:/etc/letsencrypt
       - ./certbot/www:/var/www/certbot
 
