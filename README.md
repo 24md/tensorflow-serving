@@ -156,7 +156,7 @@ http {
 }
 ```
 
-Run the `docker-compose` file.
+Create the environment.
 
 ```console
 # docker-compose up -d
@@ -168,13 +168,13 @@ After few minutes, check if the SSL certificate was generated.
 # ls certbot/conf/live/YOUR_DOMAIN/
 ```
 
-Stop the `nginx` container.
+Stop the Nginx container.
 
 ```console
 # docker-compose stop nginx
 ```
 
-Swap the `nginx` configuration.
+Swap the Nginx configuration.
 
 ```console
 # rm -f nginx/nginx.conf
@@ -219,15 +219,15 @@ http {
 }
 ```
 
-Restart the `nginx` container.
+Start the Nginx container.
 
 ```console
-# docker-compose restart nginx
+# docker-compose start nginx
 ```
 
 Access the server via HTTPS using `https://YOUR_DOMAIN/v1/models/MODEL_NAME:FUNCTION`.
 
-Add a new entry in the `crontab`.
+Add a new entry in the `crontab` to automatically renew the SSL certificate.
 
 ```console
 # crontab -e
